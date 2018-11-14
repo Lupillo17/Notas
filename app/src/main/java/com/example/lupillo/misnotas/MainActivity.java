@@ -53,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("kaka","Hola");
                 startActivity(i);
                 break;
+            case R.id.buscar:
+
+                break;
         }
         return true;
     }

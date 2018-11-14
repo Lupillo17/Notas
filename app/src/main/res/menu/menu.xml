@@ -11,6 +11,6 @@
         android:id="@+id/buscar"
         android:title="Buscar"
         android:icon="@android:drawable/ic_menu_search"
-        app:showAsAction="always"
+        app:showAsAction="always|collapseActionView"
         />
 </menu>
