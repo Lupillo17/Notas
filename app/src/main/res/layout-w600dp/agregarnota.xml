@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/txtTitulo"
+            android:layout_width="467dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="125dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Título de la nota."
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="17dp"
+            android:text="Título:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="64dp"
+            android:text="Descripción:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="111dp"
+            android:text="Tipo de nota:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="160dp"
+            android:text="Fecha de terminación:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="305dp"
+            android:layout_marginLeft="305dp"
+            android:layout_marginTop="161dp"
+            android:text="A las:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="430dp"
+            android:layout_marginLeft="430dp"
+            android:layout_marginTop="163dp"
+            android:text="Horas"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="19dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="246dp"
+            android:text="Recordar cada:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="180dp"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="247dp"
+            android:text="minuto(s)"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="386dp"
+            android:layout_marginLeft="386dp"
+            android:layout_marginTop="162dp"
+            android:text=":"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/txtDescripcion"
+            android:layout_width="468dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="124dp"
+            android:layout_marginLeft="124dp"
+            android:layout_marginTop="53dp"
+            android:ems="10"
+            android:hint="Descripción de la nota"
+            android:inputType="textPersonName" />
+
+        <Spinner
+            android:id="@+id/spnTipo"
+            android:layout_width="469dp"
+            android:layout_height="35dp"
+            android:layout_alignTop="@+id/textView9"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="123dp"
+            android:layout_marginLeft="123dp"
+            android:layout_marginTop="-5dp" />
+
+        <Button
+            android:id="@+id/btnFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spnTipo"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="47dp"
+            android:text="Elegir fecha" />
+
+    <EditText
+        android:id="@+id/txtHoras"
+        android:layout_width="33dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="351dp"
+        android:layout_marginLeft="351dp"
+        android:layout_marginTop="153dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="23" />
+
+    <EditText
+        android:id="@+id/txtRecordar"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="147dp"
+        android:layout_marginLeft="147dp"
+        android:layout_marginTop="236dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="23" />
+
+    <EditText
+        android:id="@+id/txtMinutos"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="395dp"
+        android:layout_marginLeft="395dp"
+        android:layout_marginTop="154dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="50" />
+
+        <Button
+            android:id="@+id/btnArchivo"
+            android:layout_width="289dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="298dp"
+            android:layout_marginBottom="0dp"
+            android:text="Subir archivo" />
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="300dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="298dp"
+        android:layout_marginBottom="0dp"
+        android:text="Guardar" />
+
+    <EditText
+        android:id="@+id/txtFecha"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="191dp"
+        android:layout_marginLeft="191dp"
+        android:layout_marginTop="151dp"
+        android:clickable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimaryDark" />
+
+    </RelativeLayout>
