@@ -8,9 +8,10 @@
         app:showAsAction="never"
         />
     <item
-        android:id="@+id/buscar"
-        android:title="Buscar"
+        android:id="@+id/action_search"
+        android:title="action_search"
         android:icon="@android:drawable/ic_menu_search"
-        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="ifRoom|withText"
         />
 </menu>

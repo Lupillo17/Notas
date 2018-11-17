@@ -47,7 +47,7 @@ public class AgregarNota extends AppCompatActivity implements AdapterView.OnItem
     int dia;
     Calendar calendario;
     Date fecha;
-    String s;
+    String accion;
 
 
 
@@ -105,7 +105,10 @@ public class AgregarNota extends AppCompatActivity implements AdapterView.OnItem
         });
 
         //Recuperar el Intent del MainActivity
-        s=(String)getIntent().getSerializableExtra("kaka");
+        accion=(String)getIntent().getSerializableExtra("accion");
+        if(accion.equals("editar")){
+            cargar();
+        }
         llenarSpin();
 
     }
@@ -117,7 +120,7 @@ public class AgregarNota extends AppCompatActivity implements AdapterView.OnItem
         // An item was selected. You can retrieve the selected item using
         // parent.getItemAtPosition(pos)
 
-        Toast.makeText(parent.getContext(),parent.getItemAtPosition(pos).toString(),Toast.LENGTH_LONG).show();
+
 
     }
     @Override
@@ -127,30 +130,30 @@ public class AgregarNota extends AppCompatActivity implements AdapterView.OnItem
 
 
 
-    public void btnAgregar_click(View v){
+    public void btnGuardar_click(View v){
         NotaDAO ado =new NotaDAO(getApplicationContext());
-        Toast.makeText(this,s, Toast.LENGTH_LONG).show();
-        long result = ado.Agregar(
-                new Nota(txtTitulo.getText().toString(),
-                        txtDescripcion.getText().toString(),
-                        "x",
-                        spinTipo.getSelectedItem().toString(),
-                        txtFecha.getText().toString(),
-                        txtRecordar.getText().toString(),
-                        "si",
-                        "hoy"
-                )
-        );
-        if (result>0){
-            Toast.makeText(this, "Adición exitosa",Toast.LENGTH_LONG).show();
-            //finish() se utiliza para terminar el intent del MainActivity.java
-            finish();
-        }else{
-            Toast.makeText(this,"No se agrego la nota", Toast.LENGTH_LONG).show();
+        if(accion.equals("agregar")){
+            long result = ado.Agregar(
+                    new Nota(txtTitulo.getText().toString(),
+                            txtDescripcion.getText().toString(),
+                            "x",
+                            spinTipo.getSelectedItem().toString(),
+                            txtFecha.getText().toString(),
+                            txtRecordar.getText().toString(),
+                            "si",
+                            "hoy"
+                    )
+            );
+            if (result>0){
+                Toast.makeText(this, "Adición exitosa",Toast.LENGTH_LONG).show();
+                //finish() se utiliza para terminar el intent del MainActivity.java
+                finish();
+            }else{
+                Toast.makeText(this,"No se agrego la nota", Toast.LENGTH_LONG).show();
+            }
+        }else if(accion.equals("editar")){
+
         }
-
-
-
     }
 
     public void btnEliminar_click(View v){
@@ -187,5 +190,15 @@ public class AgregarNota extends AppCompatActivity implements AdapterView.OnItem
         ArrayAdapter<String> adp = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,datos);
         spinTipo.setAdapter(adp);
         spinTipo.setOnItemSelectedListener(this);
+    }
+
+    public void cargar(){
+        String id=(String)getIntent().getSerializableExtra("NotaId");
+        NotaDAO objDao=new NotaDAO(getApplicationContext());
+        Cursor c=objDao.Buscar("titulo");
+        Toast.makeText(this,c.getString(2),Toast.LENGTH_SHORT);
+        //txtTitulo.setText(c.getString(1));
+        //txtDescripcion.setText(c.getString(2));
+        //spinTipo.setId(Integer.parseInt(c.getString(4)));
     }
 }

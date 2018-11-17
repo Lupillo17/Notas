@@ -69,6 +69,18 @@ public class NotaDAO {
                 null);
         return c;
     }
+
+    public Cursor Buscar(int id){
+        String sql="_id="+ id ;
+        Cursor c = adaptador.query(Conexion.TABLES_DB[0],
+                Conexion.COLUMNAS_NOTA,
+                sql,
+                null,
+                null,
+                null,
+                null);
+        return c;
+    }
     public List<Nota > getAll(){
         List <Nota> lst = new ArrayList<>();
 

@@ -3,6 +3,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -11,7 +12,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
+
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lupillo.misnotas.BackEnd.Conexion;
@@ -33,8 +37,10 @@ public class MainActivity extends AppCompatActivity {
         lsv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Cursor c=(Cursor)lsv.getItemAtPosition(position);
                 Intent i = new Intent(MainActivity.this,AgregarNota.class);
-                i.putExtra("kaka","Hola");
+                i.putExtra("accion","editar");
+                i.putExtra("NotaId",c.getString(0));
                 startActivity(i);
             }
         });
@@ -50,11 +56,8 @@ public class MainActivity extends AppCompatActivity {
         switch (menuItem.getItemId()){
             case R.id.agregar:
                 Intent i = new Intent(MainActivity.this,AgregarNota.class);
-                i.putExtra("kaka","Hola");
+                i.putExtra("accion","agregar");
                 startActivity(i);
-                break;
-            case R.id.buscar:
-
                 break;
         }
         return true;
@@ -63,11 +66,6 @@ public class MainActivity extends AppCompatActivity {
     public void cargar(){
         NotaDAO dao = new NotaDAO(this);
         List<Nota> lst =  dao.getAll();
-        for (Nota item: lst
-                ) {
-            Log.d("NOTA: " ,  item.getTitulo());
-            Log.d("NOTA: " , item.getDescripcion());
-        }
         Cursor c =  dao.getAllC();
         SimpleCursorAdapter adp = new SimpleCursorAdapter(
                 this, android.R.layout.simple_list_item_1 ,
