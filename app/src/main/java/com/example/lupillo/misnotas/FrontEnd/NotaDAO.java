@@ -59,7 +59,7 @@ public class NotaDAO {
     }
 
     public Cursor Buscar(String Titulo){
-        String sql="nombre='"+ Titulo+"'";
+        String sql="Titulo='"+ Titulo+"'";
         Cursor c = adaptador.query(Conexion.TABLES_DB[0],
                 Conexion.COLUMNAS_NOTA,
                 sql,
@@ -95,7 +95,8 @@ public class NotaDAO {
         while(c.moveToNext()){
 
             lst.add(
-                    new Nota(c.getString(1),
+                    new Nota(Integer.parseInt(c.getString(0)),
+                            c.getString(1),
                             c.getString(2),
                             c.getString(3),
                             c.getString(4),

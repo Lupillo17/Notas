@@ -134,7 +134,7 @@ public class AgregarNota extends AppCompatActivity implements AdapterView.OnItem
         NotaDAO ado =new NotaDAO(getApplicationContext());
         if(accion.equals("agregar")){
             long result = ado.Agregar(
-                    new Nota(txtTitulo.getText().toString(),
+                    new Nota(0,txtTitulo.getText().toString(),
                             txtDescripcion.getText().toString(),
                             "x",
                             spinTipo.getSelectedItem().toString(),
@@ -195,10 +195,21 @@ public class AgregarNota extends AppCompatActivity implements AdapterView.OnItem
     public void cargar(){
         String id=(String)getIntent().getSerializableExtra("NotaId");
         NotaDAO objDao=new NotaDAO(getApplicationContext());
-        Cursor c=objDao.Buscar("titulo");
-        Toast.makeText(this,c.getString(2),Toast.LENGTH_SHORT);
-        //txtTitulo.setText(c.getString(1));
-        //txtDescripcion.setText(c.getString(2));
-        //spinTipo.setId(Integer.parseInt(c.getString(4)));
+        Cursor c=objDao.Buscar(id);
+        c.moveToFirst();
+
+        txtTitulo.setText(c.getString(1));
+        txtDescripcion.setText(c.getString(2));
+        if(c.getString(4).equals("Nota")){
+            spinTipo.setSelection(2);
+        }else {
+
+        }
+        txtFecha.setText(c.getString(5));
+        txtRecordar.setText(c.getString(6));
+
+
+
     }
+
 }

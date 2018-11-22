@@ -1,6 +1,7 @@
 package com.example.lupillo.misnotas.BackEnd;
 
 public class Nota {
+    public int _id;
     public String Titulo;
     public String Descripcion;
     public String ArchivoMultimedia;
@@ -11,9 +12,10 @@ public class Nota {
     public String FechaRegistro;
 
 
-    public Nota(String titulo, String descripcion, String archivoMultimedia,
+    public Nota(int _id,String titulo, String descripcion, String archivoMultimedia,
                 String clasificacion, String fechaTerminacion, String recordatorio,
                 String cumplida, String fechaRegistro) {
+        this._id=_id;
         Titulo = titulo;
         Descripcion = descripcion;
         ArchivoMultimedia = archivoMultimedia;
@@ -22,6 +24,9 @@ public class Nota {
         Recordatorio = recordatorio;
         Cumplida = cumplida;
         FechaRegistro = fechaRegistro;
+    }
+    public Nota(){
+
     }
 
     public String getTitulo() {

@@ -41,7 +41,12 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(MainActivity.this,AgregarNota.class);
                 i.putExtra("accion","editar");
                 i.putExtra("NotaId",c.getString(0));
-                startActivity(i);
+                try {
+                    startActivity(i);
+                }catch (Exception e){
+
+                }
+
             }
         });
         cargar();
